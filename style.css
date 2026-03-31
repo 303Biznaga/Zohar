@@ -1,9 +1,233 @@
-:root { --oro: #d4af37; --oro-brillante: #f1d56e; --fondo: #050505; }
-body, html { margin: 0; padding: 0; height: 100%; width: 100%; font-family: 'Raleway', sans-serif; background-color: var(--fondo); display: flex; justify-content: center; align-items: center; color: var(--oro-brillante); }
-.estilo-oro { background: radial-gradient(circle at center, #2a2208 0%, #050505 100%); box-shadow: inset 0 0 100px rgba(212, 175, 55, 0.3); overflow: hidden; position: relative; }
-header h1 { font-family: 'Cinzel', serif; letter-spacing: 8px; text-align: center; }
-#contenedor-revelacion { padding: 20px; text-align: center; min-height: 200px; transition: all 0.8s ease; opacity: 1; }
-button { background: transparent; border: 1px solid var(--oro); color: var(--oro); padding: 15px 30px; font-family: 'Cinzel', serif; cursor: pointer; transition: 0.3s; display: block; margin: 20px auto; }
-button:hover { background: var(--oro); color: black; box-shadow: 0 0 20px var(--oro); }
-.estilo-oro::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background-image: radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 2px); background-size: 250px 250px; opacity: 0.2; animation: rotacion 100s linear infinite; z-index: -1; }
-@keyframes rotacion { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+.zohar-module {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #f0eaff;
+  font-family: 'Cormorant Garamond', serif;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.zohar-module .hebrew-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(4rem, 14vw, 8rem);
+  font-weight: 900;
+  color: #d4a843;
+  text-shadow: 0 0 60px rgba(212,168,67,0.6);
+  line-height: 1;
+  text-align: center;
+  direction: rtl;
+}
+
+.zohar-module .mode-selector {
+  margin: 40px 0 20px;
+}
+
+.zohar-module .mode-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.zohar-module .mode-tab {
+  flex: 1;
+  padding: 16px 8px;
+  background: rgba(212,168,67,0.03);
+  border: none;
+  border-right: 1px solid rgba(212,168,67,0.15);
+  color: rgba(240,234,255,0.4);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.zohar-module .mode-tab:last-child { border-right: none; }
+.zohar-module .mode-tab:hover { background: rgba(212,168,67,0.08); color: #f0cb6a; }
+.zohar-module .mode-tab.active {
+  background: rgba(212,168,67,0.12);
+  color: #f0cb6a;
+  box-shadow: inset 0 -2px 0 #d4a843;
+}
+
+.zohar-module .panel { display: none; }
+.zohar-module .panel.active { display: block; }
+
+.zohar-module .sefirot-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 32px auto;
+}
+
+.zohar-module .sefirah-btn {
+  background: rgba(74,127,255,0.05);
+  border: 1px solid rgba(74,127,255,0.2);
+  border-radius: 4px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: rgba(240,234,255,0.5);
+  min-width: 120px;
+}
+
+.zohar-module .sefirah-btn.selected {
+  background: rgba(74,127,255,0.15);
+  border-color: #4a7fff;
+  color: #f0eaff;
+  box-shadow: 0 0 16px rgba(74,127,255,0.2);
+}
+
+.sefirah-hebrew {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.2rem;
+  color: #d4a843;
+  display: block;
+  direction: rtl;
+}
+
+.zohar-module .consult-btn {
+  background: transparent;
+  border: 1px solid #d4a843;
+  color: #d4a843;
+  font-family: 'Secular One', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto;
+  display: block;
+}
+
+.zohar-module .consult-btn:hover {
+  background: #d4a843;
+  color: #04030d;
+}
+
+.zohar-module .response-card {
+  background: rgba(13,10,53,0.8);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 8px;
+  padding: 36px;
+  margin: 40px 0;
+}
+
+.response-sefirah-tag {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2rem;
+  color: #d4a843;
+  direction: rtl;
+  text-align: center;
+  display: block;
+}
+
+.response-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(240,234,255,0.85);
+  font-style: italic;
+  text-align: center;
+}
+
+.response-verse {
+  margin-top: 24px;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.1rem;
+  color: rgba(212,168,67,0.6);
+  text-align: center;
+  direction: rtl;
+}
+
+.zohar-module .zohar-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.zohar-module .section-card {
+  background: rgba(212,168,67,0.03);
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: 6px;
+  padding: 22px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.zohar-module .section-card:hover {
+  background: rgba(212,168,67,0.08);
+  border-color: rgba(212,168,67,0.35);
+  transform: translateY(-2px);
+}
+
+.section-hebrew {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.6rem;
+  color: #d4a843;
+  direction: rtl;
+  margin-bottom: 6px;
+}
+
+.zohar-module .section-content {
+  background: rgba(8,5,32,0.9);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 8px;
+  padding: 36px;
+  margin: 24px 0;
+  position: relative;
+}
+
+.section-content-hebrew {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.1rem;
+  color: rgba(212,168,67,0.5);
+  direction: rtl;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.section-content-text h3 {
+  font-family: 'Secular One', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: #d4a843;
+  text-transform: uppercase;
+  margin: 20px 0 10px;
+}
+
+.close-section {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: none;
+  border: none;
+  color: rgba(212,168,67,0.4);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.close-section:hover {
+  color: #d4a843;
+}
+
+.ethical-note {
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(212,168,67,0.5);
+  margin: 20px 0 10px;
+  padding: 10px;
+  border-top: 1px solid rgba(212,168,67,0.2);
+}
