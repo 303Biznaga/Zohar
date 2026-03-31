@@ -1,6 +1,156 @@
-[
-  { "titulo": "La Chispa", "mensaje": "Limpia el cristal para que la luz que ya está dentro pueda cruzar al otro lado." },
-  { "titulo": "El Eco", "mensaje": "La semilla trabaja más duro cuando está bajo tierra. Espera tu brote." },
-  { "titulo": "La Vasija", "mensaje": "Para recibir, primero hay que vaciar. Suelta lo que ya no te sirve hoy." },
-  { "titulo": "El Océano", "mensaje": "La verdad sale a la superficie cuando el agua de tu mente está en calma." }
-]
+// ============================================
+// DATOS DEL ZOHAR
+// ============================================
+
+export const SEFIROT = [
+  { hebrew: 'כֶּתֶר', name: 'Keter', concept: 'Corona · Lo Infinito', color: '#ffffff' },
+  { hebrew: 'חָכְמָה', name: 'Jojmá', concept: 'Sabiduría · El Flash', color: '#d4a843' },
+  { hebrew: 'בִּינָה', name: 'Biná', concept: 'Entendimiento · El Palacio', color: '#4a7fff' },
+  { hebrew: 'חֶסֶד', name: 'Jesed', concept: 'Amor · Misericordia', color: '#87ceeb' },
+  { hebrew: 'גְּבוּרָה', name: 'Guevurá', concept: 'Fuerza · Juicio', color: '#cc3333' },
+  { hebrew: 'תִּפְאֶרֶת', name: 'Tiferet', concept: 'Belleza · Armonía', color: '#ffd700' },
+  { hebrew: 'נֶצַח', name: 'Netzaj', concept: 'Victoria · Eternidad', color: '#90ee90' },
+  { hebrew: 'הוֹד', name: 'Hod', concept: 'Esplendor · Gratitud', color: '#dda0dd' },
+  { hebrew: 'יְסוֹד', name: 'Yesod', concept: 'Fundamento · Conexión', color: '#9370db' },
+  { hebrew: 'מַלְכוּת', name: 'Maljut', concept: 'Reino · Presencia', color: '#c8a0e0' },
+];
+
+export const ORACLE_PASSAGES = {
+  'Keter': [
+    { texto: 'En el principio, antes de que existiera forma alguna, todo era Ein Sof — lo Sin Límite. No había arriba ni abajo, ni nombre ni lenguaje. Solo la plenitud infinita que no puede ser comprendida, solo contemplada en silencio.', verso: 'אֵין סוֹף — לֵית לֵיהּ גִּלּוּיָא כְּלָל' },
+    { texto: 'Keter es la voluntad suprema, el primer movimiento imperceptible antes del pensamiento. Tu alma también tiene ese lugar de quietud total donde reside la respuesta más profunda. Baja al silencio antes de actuar.', verso: 'רְעוּתָא דְּכָל רְעוּתִין' },
+    { texto: 'La Corona está tan alta que ningún pensamiento puede alcanzarla. Pero puede ser sentida. Cuando en tu vida todo parece detenido, no es ausencia — es la plenitud que aún no se ha manifestado.', verso: 'כֶּתֶר עֶלְיוֹן עַל כָּל הַמַּחֲשָׁבוֹת' },
+  ],
+  'Jojmá': [
+    { texto: 'Jojmá es el relámpago de la comprensión — aparece un instante y lo ilumina todo. El Zohar enseña que la sabiduría verdadera no se construye: se recibe. Vacía tu mente de supuestos y prepárate para el destello.', verso: 'חָכְמָה — בְּרֵאשִׁית נִבְרָא' },
+    { texto: 'El punto primordial de Jojmá contiene todo el universo en potencia, como la semilla contiene el árbol. Lo que estás buscando ya está en ti, comprimido en un punto. Dale tiempo y espacio para desplegarse.', verso: 'נְקוּדָה קַדְמָאָה דְּכָלָּא' },
+    { texto: 'La sabiduría surge del Nada — del Ayin. No del esfuerzo sino de la apertura. El Zohar dice: "¿De dónde viene la sabiduría? — Del lugar que el ojo no puede ver."', verso: 'וְהַחָכְמָה מֵאַיִן תִּמָּצֵא' },
+  ],
+  'Biná': [
+    { texto: 'Biná es el Palacio, la Madre Superior, el útero donde la chispa de sabiduría se desarrolla hasta convertirse en forma. Lo que has comprendido necesita tiempo de gestación. No precipites el nacimiento.', verso: 'בִּינָה — פַּלְטֵרִין קַדִּישָׁא' },
+    { texto: 'El Zohar llama a Biná "el mundo del arrepentimiento" — Teshuvá. Porque el entendimiento verdadero siempre nos devuelve a la fuente. Comprende tu situación en profundidad y encontrarás el camino de regreso.', verso: 'תְּשׁוּבָה — שׁוּב אֶל הַמָּקוֹר' },
+    { texto: 'Biná es el mar, Jojmá es el río que la llena. Tu mente puede ser ese mar donde todo tiene espacio. En lugar de apresurarte, recibe todo lo que llega sin juzgarlo. La comprensión vendrá sola.', verso: 'יַמָּא עִלָּאָה מְלֵא מִכָּל סִטְרִין' },
+  ],
+  'Jesed': [
+    { texto: 'Jesed es el amor sin condiciones, la gracia que fluye sin mérito. El Zohar enseña que Abraham encarnó este principio: su tienda tenía cuatro puertas abiertas en las cuatro direcciones para que nadie quedara afuera. ¿A quién estás cerrando la puerta?', verso: 'חֶסֶד לְאַבְרָהָם — גְּדוּלָּה לְעוֹלָם' },
+    { texto: 'La misericordia divina no mide ni calcula. Es el agua que desciende a los valles sin esfuerzo. Cuando te resistes a dar o a recibir amor, bloqueas el canal más poderoso del universo.', verso: 'מַיִם — חֶסֶד — אַהֲבָה' },
+    { texto: 'El Zohar revela que Jesed es el brazo derecho del Cuerpo Divino que abraza al mundo. En tu vida, el acto de generosidad más pequeño activa fuerzas cósmicas de bendición. No subestimes lo que puedes dar.', verso: 'זְרוֹעַ יָמִין — חֶסֶד עוֹלָם' },
+  ],
+  'Guevurá': [
+    { texto: 'Guevurá es el fuego que purifica, el juicio que distingue lo esencial de lo accesorio. No toda fuerza es destrucción: a veces el amor más alto requiere decir no. El árbol que no poda sus ramas no crece.', verso: 'גְּבוּרָה — דִּין — אֵשׁ' },
+    { texto: 'Isaac encarnó Guevurá — la capacidad de permanecer firme ante la prueba más extrema. El Zohar dice que su fortaleza no era resistencia sino fe absoluta. Distingue entre resistir por miedo y sostener por convicción.', verso: 'פַּחַד יִצְחָק — עוֹז וְגְּבוּרָה' },
+    { texto: 'La disciplina es amor concentrado. Guevurá sin Jesed se convierte en crueldad; Jesed sin Guevurá en debilidad. El equilibrio entre ambas es la clave. ¿Cuál de las dos necesitas fortalecer ahora?', verso: 'תִּקּוּן — אַחְדּוּת חֶסֶד וְגְּבוּרָה' },
+  ],
+  'Tiferet': [
+    { texto: 'Tiferet es el corazón del Árbol de la Vida, el punto de perfecta armonía donde todos los opuestos se reconcilian. El Zohar lo asocia con el Sol, con Jacob, con la Verdad. Tu corazón sabe la respuesta que tu mente discute.', verso: 'תִּפְאֶרֶת — אֱמֶת — לֵב' },
+    { texto: 'El Zohar enseña que la belleza verdadera no es ornamento sino equilibrio. Cuando tu vida está en Tiferet, cada parte tiene su lugar: trabajo y descanso, dar y recibir, hablar y guardar silencio. ¿Qué está desequilibrado ahora?', verso: 'יַעֲקֹב — קַו הָאֶמְצָעִי' },
+    { texto: 'Tiferet es donde la luz del Padre (Jojmá) y el amor de la Madre (Biná) se encuentran en el Hijo. Es el principio de integración. Lo que parece contradictorio en tu vida puede ser dos aspectos de una misma verdad mayor.', verso: 'שֶׁמֶשׁ — אוֹר הַמִּתְחַבֵּר בְּאֶמְצַע' },
+  ],
+  'Netzaj': [
+    { texto: 'Netzaj es la eternidad y la victoria — la energía que no se rinde, que sigue fluyendo aunque no vea resultados inmediatos. El Zohar la asocia con Moisés y con la música. ¿Qué melodía de tu alma has dejado de tocar?', verso: 'נֶצַח — נִצָּחוֹן — עֶצֶם הַחַיִּים' },
+    { texto: 'La energía de Netzaj es la de la naturaleza: el río que rodea la piedra, la planta que empuja el concreto. Persistencia sin rigidez. Tu camino no requiere fuerza bruta — requiere constancia fluida.', verso: 'מַיִם חַיִּים — נֶצַח לְנֶצַח' },
+    { texto: 'Netzaj rige las pasiones, las emociones profundas, el arte y la música. El Zohar enseña que cada alma tiene una nota única en la gran sinfonía divina. Tu deseo más auténtico —no el egoísta sino el profundo— es una brújula sagrada.', verso: 'שִׁיר הַנְּשָׁמָה — קוֹל אֱלֹהִים' },
+  ],
+  'Hod': [
+    { texto: 'Hod es el esplendor de la gratitud, la capacidad de ver la belleza en lo ordinario. El Zohar enseña que Aaron encarnó este principio — el amor a cada alma individual, el reconocimiento de la luz en cada persona.', verso: 'הוֹד — תְּפִלָּה — הוֹדָאָה' },
+    { texto: 'La profecía y la comunicación divina fluyen a través de Hod. Antes de hablar, el Zohar recomienda escuchar. Antes de actuar, observar. La respuesta que buscas ya está siendo dicha — ¿estás escuchando?', verso: 'קוֹל דְּמָמָה דַּקָּה — שְׁמַע' },
+    { texto: 'Hod y Netzaj forman los riñones del Cuerpo Divino, de donde surge el consejo. El Zohar dice que el consejo verdadero no viene del ego sino de esa voz interior que habla en el silencio. Confía en ella.', verso: 'כְּלָיוֹת יוֹעֲצוֹת — הוֹד וָנֶצַח' },
+  ],
+  'Yesod': [
+    { texto: 'Yesod es el canal, el puente, la conexión entre el mundo espiritual y el material. José encarnó este principio — la capacidad de transmitir sin perder, de dar sin agotarse. ¿Qué estás transmitiendo al mundo?', verso: 'יְסוֹד — צַדִּיק — חַי עוֹלָמִים' },
+    { texto: 'El Zohar enseña que el Tzadik — el justo — es el fundamento del mundo. No porque sea perfecto, sino porque es un canal honesto entre lo alto y lo bajo. Tu integridad en las pequeñas cosas sostiene más de lo que imaginas.', verso: 'וְצַדִּיק יְסוֹד עוֹלָם' },
+    { texto: 'Yesod es el principio de la conexión auténtica — entre personas, entre mundos, entre momentos. El Zohar dice que cada acto realizado con intención pura crea un vínculo eterno. Las conexiones verdaderas no se rompen.', verso: 'בְּרִית — אֱמוּנָה — חִבּוּר עוֹלָמוֹת' },
+  ],
+  'Maljut': [
+    { texto: 'Maljut es la Shejiná — la Presencia Divina que mora en el mundo. El Zohar la llama la Novia, la Luna, el Espejo. Ella recibe toda la luz de las Sefirot superiores y la distribuye en el mundo. Tú eres ese espejo — ¿qué luz estás reflejando?', verso: 'שְׁכִינָה — כַּלָּה — מַלְכוּת שָׁמַיִם' },
+    { texto: 'Maljut es el reino de lo concreto — el aquí y ahora. El Zohar enseña que lo sagrado no está solo arriba: está en cada piedra, cada palabra, cada momento vivido con plena conciencia. Tu vida cotidiana es el templo.', verso: 'מַלְכוּתָא דְּאַרְעָא — כְּגַוְונָא דִּלְעֵילָּא' },
+    { texto: 'La Shejiná está en exilio mientras el mundo está roto. Cada acto de bondad, cada verdad dicha, cada reparación que haces en tu vida — tikkun — devuelve un fragmento de luz a su fuente. Tu acción de hoy importa cósmicamente.', verso: 'תִּקּוּן הַשְּׁכִינָה — גְּאֻלָּה שְׁלֵמָה' },
+  ],
+};
+
+export const SECTIONS = [
+  {
+    hebrew: 'בְּרֵאשִׁית',
+    name: 'Bereshit',
+    desc: 'El misterio de la Creación',
+    hebrewText: 'בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ',
+    content: `<h3>El Misterio del Principio</h3>
+El Zohar enseña que la palabra "Bereshit" — En el Principio — contiene todos los secretos del universo. La letra Bet (בּ) con la que comienza la Torah tiene forma de casa con tres lados abiertos hacia adelante: lo que hay arriba no puede investigarse, lo que hay abajo tampoco, solo lo que está frente a ti.
+
+<h3>La Luz Primordial</h3>
+Antes de la Creación existía únicamente Ein Sof — Lo Sin Fin. Para que existiera algo más que Dios, Ein Sof se contrajo en un proceso llamado Tzimtzum, dejando un espacio vacío donde pudo emanar la Luz Primordial. Esta luz no es la luz del sol — es la luz con la que los justos verán en el Mundo por Venir.
+
+<h3>Las Diez Emanaciones</h3>
+La Creación se desplegó a través de diez Sefirot — emanaciones o vasos de luz divina — que forman el Árbol de la Vida. Cada Sefirá es un aspecto del carácter divino reflejado en el alma humana y en toda la realidad.`
+  },
+  {
+    hebrew: 'נְשָׁמָה',
+    name: 'Neshamá',
+    desc: 'El alma y sus niveles',
+    hebrewText: 'וַיִּפַּח בְּאַפָּיו נִשְׁמַת חַיִּים',
+    content: `<h3>Los Cinco Niveles del Alma</h3>
+El Zohar revela que el alma humana tiene cinco niveles: Nefesh (instinto vital), Ruaj (espíritu emocional), Neshamá (alma intelectual), Jayá (chispa divina) y Yejidá (la unión con lo Divino). La mayoría de las personas solo conoce los primeros dos niveles.
+
+<h3>El Origen del Alma</h3>
+Antes de nacer, cada alma mora en el Tesoro Celeste donde estudia toda la Torah. En el momento del nacimiento, un ángel toca el labio del bebé — ese es el origen del surco que todos tenemos entre la nariz y el labio — y el alma olvida todo lo que aprendió. Toda la vida es un proceso de recordar.
+
+<h3>El Alma y el Cuerpo</h3>
+El Zohar compara la relación entre el alma y el cuerpo con la llama y la mecha. El cuerpo es la mecha — necesario pero no la luz. El alma es la llama que transforma la materia en luz y calor.`
+  },
+  {
+    hebrew: 'אַהֲבָה',
+    name: 'Ahavá',
+    desc: 'El Amor Sagrado',
+    hebrewText: 'וְאָהַבְתָּ אֵת יְהוָה אֱלֹהֶיךָ בְּכָל-לְבָבְךָ',
+    content: `<h3>El Amor como Fuerza Cósmica</h3>
+Para el Zohar, el amor no es simplemente una emoción humana — es la fuerza fundamental que sostiene la existencia. Jesed (Amor) es la cuarta Sefirá, el río de gracia que fluye desde lo Alto. Cuando un ser humano ama genuinamente, se convierte en canal de esa fuerza primordial.
+
+<h3>El Amor entre Hombre y Mujer</h3>
+El Zohar es extraordinariamente poético sobre el amor conyugal. La unión sagrada entre esposo y esposa refleja la unión de las energías divinas masculina y femenina — Tiferet y Shejina. Por eso el Shabat es recibido como una novia.
+
+<h3>El Amor a Dios</h3>
+Amar a Dios significa desear fusionarse con la fuente de toda existencia. El Zohar enseña que este amor comienza con el asombro — cuando contemplas la complejidad de una hoja, el orden de las estrellas, la compasión en un rostro humano, ya estás amando a Dios.`
+  },
+  {
+    hebrew: 'אוֹר',
+    name: 'Or',
+    desc: 'Los Misterios de la Luz',
+    hebrewText: 'וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי-אוֹר',
+    content: `<h3>La Primera Palabra: Luz</h3>
+"Dios dijo: Que haya luz." El Zohar pregunta: ¿si el sol y las estrellas no fueron creados hasta el cuarto día, qué era esa luz? Era la Luz Primordial — Or HaGanuz — la luz ocultada para los justos. Esta luz permite ver de un extremo del mundo al otro, ver el pasado y el futuro.
+
+<h3>La Luz y la Oscuridad</h3>
+La oscuridad no es la ausencia de luz — es una fuerza con su propia existencia. El Zohar enseña que hay 32 senderos de Sabiduría y 32 senderos de oscuridad. El libre albedrío consiste en elegir por cuál sendero caminar en cada momento.
+
+<h3>Tú Eres Luz</h3>
+El Zohar afirma que el alma humana es literalmente una chispa de la Luz Divina. "Una vela del Señor es el alma del hombre." (Proverbios 20:27) El trabajo espiritual consiste en no dejar que la materia apague esa chispa, sino en dejarla brillar.`
+  },
+  {
+    hebrew: 'תְּשׁוּבָה',
+    name: 'Teshuvá',
+    desc: 'El Retorno y la Transformación',
+    hebrewText: 'שׁוּבָה יִשְׂרָאֵל עַד יְהוָה אֱלֹהֶיךָ',
+    content: `<h3>Más que Arrepentimiento</h3>
+La palabra Teshuvá se traduce habitualmente como "arrepentimiento", pero su raíz significa "retorno". El Zohar enseña que no se trata de culpa o castigo, sino del alma encontrando el camino de regreso a su fuente. Toda la existencia es un ciclo de alejamiento y retorno.
+
+<h3>El Poder de la Transformación</h3>
+El Zohar afirma que en el lugar donde está un Ba'al Teshuvá — alguien que ha transformado su camino — ni siquiera el tzadik completo puede estar. ¿Por qué? Porque quien ha caído y se ha levantado tiene acceso a dimensiones del alma que solo se revelan a través de la lucha.
+
+<h3>El Instante Eterno</h3>
+La Teshuvá ocurre en un instante, pero ese instante reorganiza el pasado. El Zohar enseña que cuando un alma se transforma genuinamente, no solo cambia su futuro — transforma el significado de todo lo que vivió. El sufrimiento se convierte en escalón, el error en maestro.`
+  },
+  {
+    hebrew: 'מָוֶת וְחַיִּים',
+    name: 'Mavet veJaím',
+    desc: 'Muerte, Resurrección y el Alma',
+    hebrewText: 'וְנָהָר יֹצֵא מֵעֵדֶן לְהַשְׁקוֹת אֶת-הַגָּן',
+    content: `<h3>La Muerte como Umbral</h3>
+Para el Zohar, la muerte física no es el fin del alma sino una transición. El cuerpo regresa a la tierra, pero la Neshamá — el alma espiritual — asciende a los mundos superiores para continuar su viaje. El Zohar describe este proceso con extraordinaria precisión poética.
+
+<h3>El Mundo por Venir</h3>
+El Olam HaBa — el Mundo por Venir — no es un lugar geográfico sino un estado de conciencia. El Zohar lo describe como la capacidad de contemplar directamente la Shejiná — la Presencia Divina — sin el velo de la materia. Es el Shabat eterno.
+
+<h3>La Resurrección de los Muertos</h3>
+El Zohar enseña que la resurrección no será un regreso al cuerpo antiguo, sino una transformación total. El cuerpo resucitado será como el cuerpo de Adán antes de la caída — luminoso, no sujeto al tiempo ni al espacio, capaz de percibir realidades que ahora nos están ocultas.`
+  }
+];
